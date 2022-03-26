@@ -1,5 +1,7 @@
 # myscripts
 
+#### cpp2ruby.rb
+Convert c/cpp code to ruby code. Need project CPP2Ruby (https://github.com/jackieju/CPP2Ruby )
 #### hash2json.rb         
 Convert Ruby hash(read from file) to json string
 
@@ -19,7 +21,7 @@ you need to install mpv first: brew install mpv
 #### cc.rb
 Do statistcs for c/cpp file: Calculate lines, comments, and line match special regular express
 
-#### conv_gb_to_utf
+#### conv_gb_to_utf.sh
 Batchly convert file with Chinese Character set to UTF8\
 
 #### tthex.rb
