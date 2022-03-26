@@ -1,0 +1,3 @@
+#!/bin/sh
+echo find $1 -size +100M
+find $1 -size +100M

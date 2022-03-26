@@ -1,0 +1,7 @@
+if [ $# -lt 1 ]; then
+echo too few parameters $#
+exit
+fi
+echo kill process containing $1
+ps -ef | grep $1 | grep -v grep | awk '{print $2}' |xargs kill
+echo ps ax | grep $1 | grep -v grep | awk '{print $1}' |xargs kill

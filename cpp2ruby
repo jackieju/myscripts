@@ -1,0 +1,16 @@
+#!/bin/sh
+cpp2ruby_dir=/Users/i027910/Desktop/ju/projects/CPP2Ruby
+dir=`pwd`
+echo current dir $dir
+
+# find all class, userful for c_classdefs.rb
+# find ./ -name "*.h" |xargs grep -hE "class " | grep -v "@class" | grep -v "<class" | grep -vE "^.*?\*" | grep -Ev "^.*?\/\/" > c
+
+rm included_files
+rm ifstack
+
+
+inc=
+
+cd $cpp2ruby_dir
+ruby translate.rb -I "$inc" -d $dir/o $dir/output/*.cpp 
