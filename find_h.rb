@@ -1,4 +1,7 @@
 #!/usr/local/bin/ruby
+
+# List included head file in c or cpp files
+
 require 'find'
 $g_count = 0
 $g_count_comment = 0
@@ -24,6 +27,7 @@ def do_find(fname)
             content += line
         end
 
+# skip comments
         content.gsub!(/\/\*(.*?)\*\//m, "")
 #p "content:#{content}"
         content.scan(/#include\s*?['"]([a-zA-Z\._-]+)['"]/im){|m|
@@ -83,9 +87,9 @@ if $*.size >0
 
 else
     p "no file specified"
-    p "usage: ruby cc.rb <c source file>"
-    p  " example: ruby cc.rb xiaolu.c dak.c"
-    p  '           find . -type file -name "*.c" -o -name "*.h" -o -name "*.cpp" |xargs ruby cc.rb'
+    p "usage: ruby find_h.rb <c source file>"
+    p  " example: ruby find_h.rb xiaolu.c dak.c"
+    p  '           find . -type file -name "*.c" -o -name "*.h" -o -name "*.cpp" |xargs ruby find_h.rb'
     
 end
-# find . -type file -name "*.c" -o -name "*.h" -o -name "*.cpp" |xargs cc.rb
+# find . -type file -name "*.c" -o -name "*.h" -o -name "*.cpp" |xargs find_h.rb
